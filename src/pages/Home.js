@@ -2,61 +2,100 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HomeContainer = styled.div`
-  .hero-image {
-    width: 100%;
-    max-height: 80vh;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+`;
 
-  .hero-container {
-    position: relative;
-    margin-top: 1rem;
-  }
-
-  .overlay {
+const HeroSection = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(18, 18, 18, 0.4) 0%, rgba(18, 18, 18, 0.8) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    );
+    z-index: 1;
   }
+`;
 
-  .band-name {
-    font-size: 5rem;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 0 1rem;
-  }
-
+const HeroImage = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(30%) contrast(120%);
+  
   @media (max-width: 768px) {
-    .band-name {
-      font-size: 3rem;
-    }
+    width: auto;
+    height: 100%;
+    object-fit: cover;
   }
+`;
+
+const ContentOverlay = styled.div`
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+`;
+
+const BandName = styled.h1`
+  font-size: 5rem;
+  font-weight: 200;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    letter-spacing: 8px;
+  }
+`;
+
+const Tagline = styled.p`
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.8;
 `;
 
 const Home = () => {
   return (
-    <HomeContainer className="page-container">
-      <div className="hero-container">
-        <img 
+    <HomeContainer>
+      <HeroSection>
+        <HeroImage 
           src="/images/chubb-fort-adams.png" 
-          alt="Mr. Chubb at Fort Adams" 
-          className="hero-image"
+          alt="Mr. Chubb at Fort Adams"
         />
-        <div className="overlay">
-          <h1 className="band-name script-heading">Mr. Chubb</h1>
-        </div>
-      </div>
+        <ContentOverlay>
+          <BandName>Mr. Chubb</BandName>
+          <Tagline>Brass, Class, and a Whole lot of Sass!</Tagline>
+        </ContentOverlay>
+      </HeroSection>
     </HomeContainer>
   );
 };

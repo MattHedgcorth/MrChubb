@@ -26,7 +26,7 @@ const AboutContainer = styled.div`
 const About = () => {
   return (
     <AboutContainer className="page-container">
-      <h1 className="script-heading">About Mr. Chubb</h1>
+      <h1 className="page-heading">About Mr. Chubb</h1>
       <div className="about-content">
         <p>
           <span className="highlight">Mr. Chubb</span> is a dynamic musical ensemble that brings together talented musicians with a passion for creating unforgettable performances. Our unique sound blends various genres, creating an experience that resonates with audiences of all backgrounds.

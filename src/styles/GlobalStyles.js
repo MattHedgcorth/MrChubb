@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
 
   * {
     margin: 0;
@@ -10,30 +10,34 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #121212;
+    background-color: #000000;
     color: #ffffff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
+    letter-spacing: 0.5px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
   }
 
   .page-container {
-    padding: 80px 20px 20px;
-    max-width: 1200px;
+    padding: 60px 40px 40px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
-  .script-heading {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    color: #ffd700;
+  .page-heading {
+    font-size: 2.5rem;
+    color: #ffffff;
     text-align: center;
-    margin: 2rem 0;
+    margin: 3rem 0;
+    font-weight: 200;
   }
 
   img {
@@ -41,13 +45,23 @@ const GlobalStyles = createGlobalStyle`
     height: auto;
   }
 
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   @media (max-width: 768px) {
     .page-container {
-      padding: 70px 15px 15px;
+      padding: 50px 20px 20px;
     }
 
-    .script-heading {
-      font-size: 2.5rem;
+    .page-heading {
+      font-size: 2rem;
     }
   }
 `;

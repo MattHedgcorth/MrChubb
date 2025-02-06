@@ -21,7 +21,7 @@ const MediaContainer = styled.div`
 const Media = () => {
   return (
     <MediaContainer className="page-container">
-      <h1 className="script-heading">Media</h1>
+      <h1 className="page-heading">Media</h1>
       <div className="media-content">
         <p>Coming Soon!</p>
       </div>

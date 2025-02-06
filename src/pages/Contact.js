@@ -142,7 +142,7 @@ const Contact = () => {
 
   return (
     <ContactContainer className="page-container">
-      <h1 className="script-heading">Contact Us</h1>
+      <h1 className="page-heading">Contact Us</h1>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div className="form-group">

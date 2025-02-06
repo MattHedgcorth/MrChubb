@@ -156,7 +156,7 @@ const CalendarPage = () => {
 
   return (
     <CalendarContainer className="page-container">
-      <h1 className="script-heading">Upcoming Shows</h1>
+      <h1 className="page-heading">Upcoming Shows</h1>
       <div className="calendar-wrapper">
         <Calendar
           onChange={setDate}
