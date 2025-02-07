@@ -10,6 +10,7 @@ const HomeContainer = styled.div`
   margin: 0;
   position: relative;
   overflow: hidden;
+  background-color: black;
 `;
 
 const HeroSection = styled.div`
