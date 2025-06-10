@@ -94,7 +94,7 @@ const Home = () => {
         />
         <ContentOverlay>
           <BandName>Mr. Chubb</BandName>
-          <Tagline>Brass, Class, and a Whole lot of Sass!</Tagline>
+          <Tagline>New England's Premier Dance & Party Band!</Tagline>
         </ContentOverlay>
       </HeroSection>
     </HomeContainer>
