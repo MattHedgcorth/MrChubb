@@ -15,7 +15,7 @@ const SliderContainer = styled.div`
 const SliderSection = styled.div`
   position: relative;
   display: flex;
-  height: 400px;
+  height: 525px;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
@@ -75,12 +75,12 @@ const SliderHandle = styled.div`
 `;
 
 const YearDisplay = styled.div`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 200;
   text-align: center;
   color: #fff;
   letter-spacing: 2px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 `;
 
 const YearMarkers = styled.div`
@@ -95,24 +95,16 @@ const YearMarkers = styled.div`
 const YearMarker = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   letter-spacing: 0.5px;
-  transform: translateY(50%);
+  height: 0;
+  position: relative;
 
   svg {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     color: rgba(255, 255, 255, 0.3);
-    margin-top: -1px;
-  }
-
-  &:first-child {
-    transform: translateY(0);
-  }
-
-  &:last-child {
-    transform: translateY(100%);
   }
 `;
 
@@ -125,7 +117,7 @@ const ClickArea = styled.div`
   cursor: pointer;
 `;
 
-const YearSlider = ({ minYear = 1996, maxYear = 2025, onYearChange }) => {
+const YearSlider = ({ minYear = 1996, maxYear = 2026, onYearChange }) => {
   const [currentYear, setCurrentYear] = useState(maxYear);
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef(null);
@@ -190,22 +182,13 @@ const YearSlider = ({ minYear = 1996, maxYear = 2025, onYearChange }) => {
   const percentage = calculatePercentage(currentYear);
 
   const getYearMarkers = () => {
-    const totalYears = maxYear - minYear;
-    const markerCount = 7;
-    const yearStep = Math.floor(totalYears / (markerCount - 1));
     const markers = [];
-    
-    for (let i = 0; i < markerCount; i++) {
-      const year = maxYear - (i * yearStep);
-      if (year >= minYear) {
+    // Generate only even years from maxYear down to minYear
+    for (let year = maxYear; year >= minYear; year--) {
+      if (year % 2 === 0) {
         markers.push(year);
       }
     }
-    
-    if (markers[markers.length - 1] > minYear) {
-      markers.push(minYear);
-    }
-    
     return markers;
   };
 
