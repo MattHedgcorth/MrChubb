@@ -2,6 +2,17 @@
 
 A modern, interactive website for the MrChubb band, built with React and styled-components.
 
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Media Archive
+![Media Archive](screenshots/media.png)
+
+### Contact Page
+![Contact Page](screenshots/contact.png)
+
 ## Features
 
 - **Home Page**: Welcome page with band introduction and featured content
